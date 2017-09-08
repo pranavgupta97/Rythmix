@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    android:padding="50dp"
+    tools:context="com.example.pranav.karaoke.karaokeActivity">
+
+    <Button
+        android:id="@+id/logInButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gradient_button_background"
+        android:text="Log In"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/karaokeTextView" />
+
+    <TextView
+        android:id="@+id/karaokeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="113dp"
+        android:text="Karaoke!"
+        android:textColor="#9effffff"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/signUpButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gradient_button_background"
+        android:text="Sign Up"
+        android:layout_alignBaseline="@+id/logInButton"
+        android:layout_alignBottom="@+id/logInButton"
+        android:layout_toStartOf="@+id/karaokeTextView" />
+
+</RelativeLayout>
