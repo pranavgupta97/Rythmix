@@ -24,6 +24,10 @@ public class signUpActivity extends AppCompatActivity {
     private ProgressDialog  progressDialog;
     private FirebaseAuth    firebaseAuth;
 
+    /*
+    *This is the signUpActivity that signs up the user to the App
+    */
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
