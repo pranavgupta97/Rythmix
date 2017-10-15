@@ -5,68 +5,146 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_background"
-    android:padding="50dp"
+    android:gravity="top"
+    android:padding="25dp"
     tools:context="com.example.pranav.karaoke.signUpActivity">
 
-    <EditText
-        android:id="@+id/signUpUserNameEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="21dp"
-        android:background="#50aaaaaa"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="User Name"
-        android:textColor="#9effffff"
-        android:layout_below="@+id/signUpEmailEditText"
-        android:layout_alignParentStart="true" />
 
-    <EditText
-        android:id="@+id/signUpEmailEditText"
+    <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#50aaaaaa"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Email"
-        android:textColor="#9effffff"
-        android:layout_marginTop="27dp"
-        android:layout_below="@+id/signUpFullNameEditText"
-        android:layout_alignParentStart="true" />
+        android:gravity="top"
+        android:orientation="vertical"
+        android:paddingTop="50dp">
 
-    <EditText
-        android:id="@+id/signUpFullNameEditText"
-        android:hint="Full Name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:background="#50aaaaaa"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:textColor="#9effffff" />
 
-    <EditText
-        android:id="@+id/signUpPasswordEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="65dp"
-        android:background="#50aaaaaa"
-        android:ems="10"
-        android:inputType="textPassword"
-        android:hint="Password"
-        android:textColor="#9effffff"
-        android:layout_below="@+id/signUpEmailEditText"
-        android:layout_alignParentStart="true" />
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.03"
+            android:textColorHint="#fff">
+
+            <EditText
+                android:id="@+id/signUpFullNameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_weight="0.03"
+                android:background="@color/transparent"
+                android:drawablePadding="12dp"
+                android:drawableStart="@drawable/ic_person_outline_white_24dp"
+                android:ems="10"
+                android:hint="@string/fullName"
+                android:inputType="textPersonName"
+                android:paddingBottom="15dp"
+                android:paddingEnd="12dp"
+                android:paddingStart="12dp"
+                android:paddingTop="17dp"
+                android:textColor="#9effffff"
+                android:textColorHint="#fff" />
+
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.03"
+            android:textColorHint="#fff">
+
+            <EditText
+                android:id="@+id/signUpUserNameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_weight="0.02"
+                android:background="@color/transparent"
+                android:drawablePadding="12dp"
+                android:drawableStart="@drawable/ic_mic_none_white_24dp"
+                android:ems="10"
+                android:hint="User Name"
+                android:inputType="textPersonName"
+                android:paddingBottom="15dp"
+                android:paddingEnd="12dp"
+                android:paddingStart="12dp"
+                android:paddingTop="17dp"
+                android:textColor="#9effffff"
+                android:textColorHint="#fff" />
+
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.03"
+            android:textColorHint="#fff">
+
+            <EditText
+                android:id="@+id/signUpEmailEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_weight="0.02"
+                android:background="@color/transparent"
+                android:drawablePadding="12dp"
+                android:drawableStart="@drawable/ic_mail_outline_black_24dp"
+                android:ems="10"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress"
+                android:paddingBottom="15dp"
+                android:paddingEnd="12dp"
+                android:paddingStart="12dp"
+                android:paddingTop="17dp"
+                android:textColor="#9effffff"
+                android:textColorHint="#fff" />
+
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.03"
+            android:textColorHint="#fff">
+
+            <EditText
+                android:id="@+id/signUpPasswordEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_weight="0.03"
+                android:background="@color/transparent"
+                android:drawablePadding="12dp"
+                android:drawableStart="@drawable/ic_lock_outline_white_24dp"
+                android:ems="10"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:paddingBottom="15dp"
+                android:paddingEnd="12dp"
+                android:paddingStart="12dp"
+                android:paddingTop="17dp"
+                android:textColor="#9effffff"
+                android:textColorHint="#fff" />
+
+        </android.support.design.widget.TextInputLayout>
+
+
+    </LinearLayout>
+
 
     <Button
         android:id="@+id/signUpSubmitButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/gradient_button_background"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="78dp"
+        android:background="@drawable/rounded_button"
         android:text="Submit"
-        android:layout_below="@+id/signUpPasswordEditText"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="119dp" />
+        android:textColor="#C33764"
+        android:textSize="18sp" />
+
 
 </RelativeLayout>

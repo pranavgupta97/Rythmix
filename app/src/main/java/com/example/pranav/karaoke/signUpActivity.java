@@ -1,6 +1,7 @@
 package com.example.pranav.karaoke;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class signUpActivity extends AppCompatActivity {
     private EditText        nameEditText;
@@ -23,11 +25,7 @@ public class signUpActivity extends AppCompatActivity {
     private Button          submitButton;
     private ProgressDialog  progressDialog;
     private FirebaseAuth    firebaseAuth;
-
-    /*
-    *This is the signUpActivity that signs up the user to the App
-    */
-
+    private FirebaseUser    currUser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +33,7 @@ public class signUpActivity extends AppCompatActivity {
 
         progressDialog  = new ProgressDialog(this);
         firebaseAuth    = FirebaseAuth.getInstance();
-
+        currUser        =  firebaseAuth.getCurrentUser();
         //Assigning views from the layout file to their corresponding views
         nameEditText        =   (EditText)  findViewById(R.id.signUpFullNameEditText);
         emailEditText       =   (EditText)  findViewById(R.id.signUpEmailEditText);
@@ -61,6 +59,7 @@ public class signUpActivity extends AppCompatActivity {
                     return;
                 }
 
+
                 //Display progressDialog to user
                 progressDialog.setMessage("Signing Up!");
                 progressDialog.show();
@@ -72,8 +71,9 @@ public class signUpActivity extends AppCompatActivity {
                             progressDialog.dismiss();
                         }
                         else {
-                            Toast.makeText(signUpActivity.this, "Sign Up Failed! Please try again.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(signUpActivity.this, "Sign Up Failed:" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
+                        progressDialog.dismiss();
                     }
                 });
             }
