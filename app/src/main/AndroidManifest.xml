@@ -12,14 +12,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".karaokeActivity">
+
+        </activity>
+        <activity android:name=".signUpActivity" />
+        <activity android:name=".logInActivity" />
+        <activity android:name=".splashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".signUpActivity" />
-        <activity android:name=".logInActivity"></activity>
     </application>
 
 </manifest>

@@ -8,35 +8,45 @@
     android:padding="50dp"
     tools:context="com.example.pranav.karaoke.karaokeActivity">
 
-    <Button
-        android:id="@+id/logInButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/gradient_button_background"
-        android:text="Log In"
-        android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/karaokeTextView" />
-
-    <TextView
-        android:id="@+id/karaokeTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="113dp"
-        android:text="Karaoke!"
-        android:textColor="#9effffff"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+        android:layout_alignParentStart="true">
 
-    <Button
-        android:id="@+id/signUpButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/gradient_button_background"
-        android:text="Sign Up"
-        android:layout_alignBaseline="@+id/logInButton"
-        android:layout_alignBottom="@+id/logInButton"
-        android:layout_toStartOf="@+id/karaokeTextView" />
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@mipmap/mic_logo" />
+
+        <Button
+            android:id="@+id/logInButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="150dp"
+            android:gravity="center"
+            android:background="@drawable/rounded_button"
+            android:text="Log In"
+            android:textColor="#C33764"
+            android:textSize="15sp"
+            />
+
+        <Button
+            android:id="@+id/signUpButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/rounded_button"
+            android:text="Get Started"
+            android:textColor="#C33764"
+            android:textSize="15sp"
+            />
+
+    </LinearLayout>
 
 </RelativeLayout>
