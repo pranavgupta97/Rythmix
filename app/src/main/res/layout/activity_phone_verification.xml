@@ -22,26 +22,60 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/editText3"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="46dp"
         android:text="Enter Your Phone Number:"
         android:textAlignment="center"
         android:textColor="#9effffff"
         android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_below="@+id/imageView3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="48dp" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/phoneNumberEntered"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:drawableStart="@drawable/ic_phone_white_24dp"
         android:ems="10"
         android:textColorHint="#fff"
+        android:textColor="#fff"
+        android:drawablePadding="15dp"
         android:background="#50aaaaaa"
         android:inputType="phone"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/sendCodeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="54dp"
+        android:text="Send Code"
+        android:layout_alignTop="@+id/phoneNumberEntered"
+        android:layout_alignEnd="@+id/imageView3" />
+
+    <EditText
+        android:id="@+id/verificationCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:background="#50aaaaaa"
+        android:hint="Enter Verification Code Here"
+        android:textColorHint="#ffff"
+        android:textColor="#ffff"
+        android:inputType="number"
+        android:layout_below="@+id/sendCodeButton"
+        android:layout_alignStart="@+id/textView"
+        android:layout_marginTop="32dp"
+        android:layout_alignParentEnd="true"/>
+
+    <Button
+        android:id="@+id/verifyButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Verify"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="182dp" />
+        android:layout_alignStart="@+id/imageView3"
+        android:layout_marginBottom="18dp" />
 
 </RelativeLayout>
