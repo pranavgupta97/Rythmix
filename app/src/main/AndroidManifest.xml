@@ -11,11 +11,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".karaokeActivity">
-
-        </activity>
-        <activity android:name=".signUpActivity" />
-        <activity android:name=".logInActivity" />
         <activity android:name=".splashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,6 +18,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".RegistrationActivity" />
+        <activity
+            android:name=".userProfile"
+            android:label="@string/title_activity_user_profile"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

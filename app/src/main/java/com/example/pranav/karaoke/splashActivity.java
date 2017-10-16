@@ -27,7 +27,7 @@ public class splashActivity extends Activity {
         View.OnClickListener skip = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(splashActivity.this, karaokeActivity.class));
+                startActivity(new Intent(splashActivity.this, RegistrationActivity.class));
             }
         };
         rotateK.setOnClickListener(skip);
@@ -41,7 +41,8 @@ public class splashActivity extends Activity {
                     e.printStackTrace();
 
                 }finally{
-                    Intent splash = new Intent(splashActivity.this,karaokeActivity.class);
+                    Intent splash = new Intent(splashActivity.this,RegistrationActivity.class);
+                    //Intent splash = new Intent(splashActivity.this,RegistrationActivity.class);
                     startActivity(splash);
 
                 }
