@@ -1,5 +1,6 @@
 package com.example.pranav.karaoke;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -90,6 +91,9 @@ public class phoneVerificationActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
+                    Intent registrationActivityIntent  = new Intent(phoneVerificationActivity.this, RegistrationActivity.class);
+                    startActivity(registrationActivityIntent);
+                    finish();
                     Toast.makeText(phoneVerificationActivity.this, "SignIn Successful", Toast.LENGTH_SHORT).show();
                 }
             }

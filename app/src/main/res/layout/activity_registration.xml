@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    android:gravity="top"
+    android:padding="25dp"
+    tools:context="com.example.pranav.karaoke.RegistrationActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="311dp"
+        android:layout_height="268dp"
+        android:gravity="top"
+        android:orientation="vertical"
+        android:paddingTop="50dp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="101dp">
+
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.03"
+            android:textColorHint="#fff"
+            android:id="@+id/fullNameEditText">
+
+            <EditText
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_weight="0.03"
+                android:background="@color/transparent"
+                android:drawablePadding="12dp"
+                android:drawableStart="@drawable/ic_person_outline_white_24dp"
+                android:ems="10"
+                android:hint="@string/fullName"
+                android:inputType="textPersonName"
+                android:paddingBottom="15dp"
+                android:paddingEnd="12dp"
+                android:paddingStart="12dp"
+                android:paddingTop="17dp"
+                android:textColor="#9effffff"
+                android:textColorHint="#fff" />
+
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.03"
+            android:textColorHint="#fff"
+            android:id="@+id/userNameEditText">
+
+
+            <EditText
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_weight="0.02"
+                android:background="@color/transparent"
+                android:drawablePadding="12dp"
+                android:drawableStart="@drawable/ic_mic_none_white_24dp"
+                android:ems="10"
+                android:hint="@string/user_name"
+                android:inputType="textPersonName"
+                android:paddingBottom="15dp"
+                android:paddingEnd="12dp"
+                android:paddingStart="12dp"
+                android:paddingTop="17dp"
+                android:textColor="#9effffff"
+                android:textColorHint="#fff" />
+
+        </android.support.design.widget.TextInputLayout>
+
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_height="50dp"
+        android:layout_width="318dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:background="@drawable/rounded_button"
+        android:text="@string/save"
+        android:textColor="#C33764"
+        android:textSize="18sp"
+        tools:layout_editor_absoluteY="314dp"
+        tools:layout_editor_absoluteX="16dp" />
+
+
+</RelativeLayout>

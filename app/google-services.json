@@ -15,6 +15,22 @@
       },
       "oauth_client": [
         {
+          "client_id": "519511712172-u0ued5aqgeifgo6h8ttsja13pudbm2ld.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pranav.karaoke",
+            "certificate_hash": "d8067923a927c2c14ef5b1c823057af8252a8e36"
+          }
+        },
+        {
+          "client_id": "519511712172-ensmcbtqflncd42egnotenfrmtqua4ff.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pranav.karaoke",
+            "certificate_hash": "622f23c0a270eecc233188ac22b5932926084362"
+          }
+        },
+        {
           "client_id": "519511712172-nl3sbceq6o6bp38hoeh668j0quhajkgs.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
