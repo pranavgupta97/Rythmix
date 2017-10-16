@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Karaoke</string>
+    <string name="app_name">Rythmix</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="password">Password</string>
     <string name="email">Email</string>
