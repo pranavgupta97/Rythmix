@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -37,6 +38,13 @@ public class RegistrationActivity extends AppCompatActivity {
         username = (TextInputLayout) findViewById(R.id.userNameEditText);
         saveButton = (Button) findViewById(R.id.saveButton);
 
+
+
+    }
+
+
+    public void onStart() {
+        super.onStart();
         saveButton.setOnClickListener(new View.OnClickListener(){
 
             @Override
@@ -53,15 +61,14 @@ public class RegistrationActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<Void> task) {
                         if(task.isSuccessful()){
                             //move to next activity
-                            Intent userProfileIntent = new Intent(RegistrationActivity.this, userProfile.class);
+                            /*Intent userProfileIntent = new Intent(RegistrationActivity.this, userProfile.class);
                             startActivity(userProfileIntent);
-                            finish();
+                            finish();*/
+                            Toast.makeText(RegistrationActivity.this, "Database Updated", Toast.LENGTH_LONG).show();
                         }
                     }
                 });
             }
         });
-
     }
-
 }

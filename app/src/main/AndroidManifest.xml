@@ -18,11 +18,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RegistrationActivity" />
-        <activity
-            android:name=".userProfile"
-            android:label="@string/title_activity_user_profile"
-            android:theme="@style/AppTheme"></activity>
+        <activity android:name=".phoneVerificationActivity"></activity>
+        <activity android:name=".RegistrationActivity"/>
     </application>
 
 </manifest>
