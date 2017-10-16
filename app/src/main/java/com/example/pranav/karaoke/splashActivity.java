@@ -14,6 +14,8 @@ import android.widget.ImageView;
 
 public class splashActivity extends Activity {
     ImageView rotateK;
+    boolean clicked = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
@@ -27,27 +29,28 @@ public class splashActivity extends Activity {
         View.OnClickListener skip = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(splashActivity.this, karaokeActivity.class));
+                clicked = true;
+                startActivity(new Intent(splashActivity.this, phoneVerificationActivity.class));
             }
         };
         rotateK.setOnClickListener(skip);
 
-        Thread timerThread = new Thread(){
-            public void run(){
-                try{
+        Thread timerThread = new Thread() {
+            public void run() {
+                try {
                     sleep(4000);
 
-                }catch(InterruptedException e){
+                } catch (InterruptedException e) {
                     e.printStackTrace();
 
-                }finally{
-                    Intent splash = new Intent(splashActivity.this,karaokeActivity.class);
-                    startActivity(splash);
-
+                } finally {
+                    if (!clicked) {
+                        Intent splash = new Intent(splashActivity.this, phoneVerificationActivity.class);
+                        startActivity(splash);
+                    }
                 }
             }
         };
-
         timerThread.start();
     }
 
