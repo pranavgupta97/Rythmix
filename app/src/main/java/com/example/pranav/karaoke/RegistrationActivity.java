@@ -61,9 +61,9 @@ public class RegistrationActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<Void> task) {
                         if(task.isSuccessful()){
                             //move to next activity
-                            /*Intent userProfileIntent = new Intent(RegistrationActivity.this, userProfile.class);
+                            Intent userProfileIntent = new Intent(RegistrationActivity.this, userProfileActivity.class);
                             startActivity(userProfileIntent);
-                            finish();*/
+                            finish();
                             Toast.makeText(RegistrationActivity.this, "Database Updated", Toast.LENGTH_LONG).show();
                             //test
                         }

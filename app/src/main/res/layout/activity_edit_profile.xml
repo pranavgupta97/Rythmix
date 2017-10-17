@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.pranav.karaoke.userProfileActivity"
+    android:background="@drawable/gradient_background"
+    android:padding="0dp">
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/saveButton"
+        android:layout_width="52dp"
+        android:layout_height="51dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginLeft="@dimen/fab_margin"
+        android:layout_marginRight="@dimen/fab_margin"
+        android:layout_x="315dp"
+        android:layout_y="504dp"
+        app:srcCompat="@mipmap/save" />
+
+    <EditText
+        android:id="@+id/signUpUserNameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_weight="0.02"
+        android:layout_x="0dp"
+        android:layout_y="248dp"
+        android:background="@color/transparent"
+        android:drawablePadding="12dp"
+        android:drawableStart="@drawable/ic_mic_none_white_24dp"
+        android:ems="10"
+        android:hint="  User Name"
+        android:inputType="textPersonName"
+        android:paddingBottom="15dp"
+        android:paddingEnd="12dp"
+        android:paddingStart="12dp"
+        android:paddingTop="17dp"
+        android:textColor="#9effffff"
+        android:textColorHint="#fff" />
+
+    <EditText
+        android:id="@+id/signUpFullNameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_weight="0.03"
+        android:layout_x="-1dp"
+        android:layout_y="191dp"
+        android:background="@color/transparent"
+        android:drawablePadding="12dp"
+        android:drawableStart="@drawable/ic_person_outline_white_24dp"
+        android:ems="10"
+        android:hint="  Full Name"
+        android:inputType="textPersonName"
+        android:paddingBottom="15dp"
+        android:paddingEnd="12dp"
+        android:paddingStart="12dp"
+        android:paddingTop="17dp"
+        android:textColor="#9effffff"
+        android:textColorHint="#fff" />
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="105dp"
+        android:layout_height="112dp"
+        android:layout_alignBottom="@+id/toolbar2"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="bottom|end"
+        android:layout_marginLeft="@dimen/fab_margin"
+        android:layout_marginRight="@dimen/fab_margin"
+        android:layout_x="139dp"
+        android:layout_y="17dp"
+        app:srcCompat="@mipmap/img_947" />
+
+    <EditText
+        android:id="@+id/signUpEmailEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_weight="0.02"
+        android:layout_x="1dp"
+        android:layout_y="305dp"
+        android:background="@color/transparent"
+        android:drawablePadding="12dp"
+        android:drawableStart="@android:drawable/ic_menu_call"
+        android:ems="10"
+        android:hint="Phone Number"
+        android:inputType="textPhonetic"
+        android:paddingBottom="15dp"
+        android:paddingEnd="12dp"
+        android:paddingStart="12dp"
+        android:paddingTop="17dp"
+        android:textColor="#9effffff"
+        android:textColorHint="#fff" />
+
+
+</AbsoluteLayout>
