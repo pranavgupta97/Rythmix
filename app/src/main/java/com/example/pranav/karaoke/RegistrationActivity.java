@@ -65,6 +65,7 @@ public class RegistrationActivity extends AppCompatActivity {
                             startActivity(userProfileIntent);
                             finish();*/
                             Toast.makeText(RegistrationActivity.this, "Database Updated", Toast.LENGTH_LONG).show();
+                            //test
                         }
                     }
                 });
