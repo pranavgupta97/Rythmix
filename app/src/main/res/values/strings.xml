@@ -7,4 +7,11 @@
     <string name="title_activity_user_profile">userProfile</string>
     <string name="user_name">User Name</string>
     <string name="save">Save</string>
+    <string name="newSession">Create a new Karaoke Session</string>
+    <string name="sessionName">Enter your session name here!</string>
+    <string-array name="modes">
+        <item>Select a mode</item>
+        <item>Sober Mode</item>
+        <item>Drunk Mode</item>
+    </string-array>
 </resources>
