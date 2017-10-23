@@ -18,10 +18,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".phoneVerificationActivity"/>
-        <activity android:name=".RegistrationActivity"/>
-        <activity android:name=".editProfileActivity"/>
-        <activity android:name=".userProfileActivity"/>
+        <activity android:name=".phoneVerificationActivity" />
+        <activity android:name=".RegistrationActivity" />
+        <activity android:name=".editProfileActivity" />
+        <activity android:name=".userProfileActivity" />
+        <activity android:name=".createSessionActivity" />
+        <activity android:name=".soberModeActivity" />
+        <activity android:name=".drunkModeActivity" />
+        <activity android:name=".finalActivity"></activity>
     </application>
 
 </manifest>

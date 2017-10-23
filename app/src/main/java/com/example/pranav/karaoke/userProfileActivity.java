@@ -42,5 +42,12 @@ public class userProfileActivity extends AppCompatActivity {
         };
         logout.setOnClickListener(logoutListener);
 
+        View.OnClickListener fabListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(userProfileActivity.this, createSessionActivity.class));
+            }
+        };
+        newSession.setOnClickListener(fabListener);
     }
 }
