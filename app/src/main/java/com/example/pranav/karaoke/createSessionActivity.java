@@ -80,9 +80,7 @@ public class createSessionActivity extends AppCompatActivity {
                                                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                                                     User user = snapshot.getValue(User.class);
                                                     if(user != null) {
-
                                                         usernames.add(user.username);
-
                                                     }
                                                 }
                                             }
@@ -102,7 +100,8 @@ public class createSessionActivity extends AppCompatActivity {
                     });
 
 
-                }else if(selectedMode.equals("Drunk Mode")){
+                }
+                else if(selectedMode.equals("Drunk Mode")){
                     String sessName = sessionName.getText().toString();
                     String sessMode = selectedMode;
                     final FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
