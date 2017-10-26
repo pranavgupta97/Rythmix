@@ -14,4 +14,19 @@
         <item>Sober Mode</item>
         <item>Drunk Mode</item>
     </string-array>
+    <string-array name="themes">
+        <item>Select a Theme</item>
+        <item>4th of July</item>
+        <item>Halloween</item>
+        <item>Thanksgiving</item>
+        <item>Christmas</item>
+        <item>Genres</item>
+        <item>Pop</item>
+        <item>Rock</item>
+        <item>Country</item>
+        <item>Hip Hop</item>
+        <item>No Theme</item>
+    </string-array>
+    <string name="title_activity_theme">themeActivity</string>
+    <string name="now_select_a_theme_bitch">Now select a Theme Bitch!</string>
 </resources>
