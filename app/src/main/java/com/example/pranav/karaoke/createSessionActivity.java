@@ -34,14 +34,16 @@ public class createSessionActivity extends AppCompatActivity {
     //declare Variables
 
     Spinner modeSpinner;
-    ArrayAdapter<CharSequence>myAdapter;
+    ArrayAdapter<CharSequence> myAdapter;
     String selectedMode;
     FloatingActionButton fabNext;
     private DatabaseReference mDatabase;
-    private DatabaseReference mUsers;
+
     EditText sessionName;
     String username;
     ArrayList<String> usernames = new ArrayList<String>();
+    int i = 0;
+    int j = 0;
     //**************************?//
 
     @Override
@@ -50,69 +52,79 @@ public class createSessionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_create_session);
         sessionName = (EditText) findViewById(R.id.sessionName);
         //Instantiate fab button
-        fabNext = (FloatingActionButton)findViewById(R.id.sessionFab);
+        fabNext = (FloatingActionButton) findViewById(R.id.sessionFab);
         //set up fab button on click listener
         View.OnClickListener nextListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(selectedMode.equals("Sober Mode")){
+                if (selectedMode.equals("Sober Mode")) {
 
                     String sessName = sessionName.getText().toString();
                     String sessMode = selectedMode;
 
                     final FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
-                    mDatabase = FirebaseDatabase.getInstance().getReference().child("Karaoke Session").child(currentUser.getUid());
-
+                    mDatabase = FirebaseDatabase.getInstance().getReference().child("Karaoke_Session").child(currentUser.getUid());
 
 
                     HashMap<String, String> sessionMap = new HashMap<>();
                     sessionMap.put("session Name", sessName);
                     sessionMap.put("session Mode", sessMode);
-                    mDatabase.setValue(sessionMap).addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                            if(task.isSuccessful()){
-                                //loop through users
-                                FirebaseDatabase.getInstance().getReference().child("Users")
-                                        .addListenerForSingleValueEvent(new ValueEventListener() {
-                                            @Override
-                                            public void onDataChange(DataSnapshot dataSnapshot) {
-                                                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                                                    User user = snapshot.getValue(User.class);
-                                                    if(user != null) {
-                                                        usernames.add(user.username);
-                                                    }
-                                                }
+                    mDatabase.setValue(sessionMap);
+                    mDatabase = FirebaseDatabase.getInstance().getReference().child("Karaoke_Session").child(currentUser.getUid()).child("SessionUsers");
+                    final HashMap<String, String> sessionUsersMap = new HashMap<>();
+
+                    FirebaseDatabase.getInstance().getReference().child("Users")
+                            .addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(DataSnapshot dataSnapshot) {
+                                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                                        User user = snapshot.getValue(User.class);
+                                        if (user != null) {
+                                            i++;
+                                            sessionUsersMap.put("user" + i, user.username);
+                                            usernames.add(user.username);
+                                        }
+                                    }
+                                    mDatabase.setValue(sessionUsersMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            if (task.isSuccessful()) {
+                                                //loop through users
+
+                                                Intent createSessIntent = new Intent(createSessionActivity.this, soberModeActivity.class);
+                                                createSessIntent.putStringArrayListExtra("This a list of usernames", usernames);
+                                                startActivity(createSessIntent);
+                                                finish();
+
+                                                Toast.makeText(createSessionActivity.this, "Session Created", Toast.LENGTH_LONG).show();
+                                                //test
                                             }
-                                            @Override
-                                            public void onCancelled(DatabaseError databaseError) {
-                                            }
-                                        });
-                                Intent createSessIntent = new Intent(createSessionActivity.this, soberModeActivity.class);
-                                createSessIntent.putStringArrayListExtra("This a list of usernames", usernames);
-                                startActivity(createSessIntent);
-                                finish();
+                                        }
+                                    });
+                                }
 
-                                Toast.makeText(createSessionActivity.this, "Session Created", Toast.LENGTH_LONG).show();
-                                //test
-                            }
-                        }
-                    });
+                                @Override
+                                public void onCancelled(DatabaseError databaseError) {
+                                }
+                            });
 
 
-                }
-                else if(selectedMode.equals("Drunk Mode")){
+                } else if (selectedMode.equals("Drunk Mode")) {
                     String sessName = sessionName.getText().toString();
                     String sessMode = selectedMode;
                     final FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
-                    mDatabase = FirebaseDatabase.getInstance().getReference().child("Karaoke Session").child(currentUser.getUid());
+                    mDatabase = FirebaseDatabase.getInstance().getReference().child("Karaoke_Session").child(currentUser.getUid());
                     HashMap<String, String> sessionMap = new HashMap<>();
                     sessionMap.put("session Name", sessName);
                     sessionMap.put("session Mode", sessMode);
+                    mDatabase.setValue(sessionMap);
+                    mDatabase = FirebaseDatabase.getInstance().getReference().child("Karaoke_Session").child(currentUser.getUid()).child("SessionUsers");
+                    final HashMap<String, String> sessionUsersMap = new HashMap<>();
+
                     mDatabase.setValue(sessionMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
-                            if(task.isSuccessful()){
+                            if (task.isSuccessful()) {
                                 //move to next activity
                                 //loop through users
                                 FirebaseDatabase.getInstance().getReference().child("Users")
@@ -121,28 +133,40 @@ public class createSessionActivity extends AppCompatActivity {
                                             public void onDataChange(DataSnapshot dataSnapshot) {
                                                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                                                     User user = snapshot.getValue(User.class);
-                                                    if(user != null) {
-
+                                                    if (user != null) {
+                                                        j++;
+                                                        sessionUsersMap.put("user" + j, user.username);
                                                         usernames.add(user.username);
 
                                                     }
                                                 }
+                                                mDatabase.setValue(sessionUsersMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                    @Override
+                                                    public void onComplete(@NonNull Task<Void> task) {
+                                                        if (task.isSuccessful()) {
+
+
+                                                            Intent createDSessIntent = new Intent(createSessionActivity.this, drunkModeActivity.class);
+                                                            createDSessIntent.putStringArrayListExtra("This a list of usernames", usernames);
+                                                            startActivity(createDSessIntent);
+                                                            finish();
+
+                                                            Toast.makeText(createSessionActivity.this, "Session Created", Toast.LENGTH_LONG).show();
+                                                            //test
+                                                        }
+                                                    }
+                                                });
                                             }
+
                                             @Override
                                             public void onCancelled(DatabaseError databaseError) {
                                             }
                                         });
-                                Intent createDSessIntent = new Intent(createSessionActivity.this, drunkModeActivity.class);
-                                createDSessIntent.putStringArrayListExtra("This a list of usernames", usernames);
-                                startActivity(createDSessIntent);
-                                finish();
 
-                                Toast.makeText(createSessionActivity.this, "Session Created", Toast.LENGTH_LONG).show();
-                                //test
                             }
                         }
                     });
-                }else{
+                } else {
                     Toast.makeText(createSessionActivity.this, "Please Select a Mode for your Session!", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -158,7 +182,7 @@ public class createSessionActivity extends AppCompatActivity {
         modeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                selectedMode = (String)parent.getItemAtPosition(position);
+                selectedMode = (String) parent.getItemAtPosition(position);
 
             }
 
