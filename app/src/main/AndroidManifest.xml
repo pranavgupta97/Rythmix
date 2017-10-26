@@ -3,6 +3,7 @@
     package="com.example.pranav.karaoke">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
         android:allowBackup="true"
@@ -25,7 +26,8 @@
         <activity android:name=".createSessionActivity" />
         <activity android:name=".soberModeActivity" />
         <activity android:name=".drunkModeActivity" />
-        <activity android:name=".finalActivity"></activity>
+        <activity android:name=".finalActivity" />
+        <activity android:name=".themeActivity"></activity>
     </application>
 
 </manifest>
