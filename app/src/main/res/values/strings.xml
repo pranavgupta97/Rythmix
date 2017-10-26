@@ -9,6 +9,9 @@
     <string name="save">Save</string>
     <string name="newSession">Create a new Karaoke Session</string>
     <string name="sessionName">Enter your session name here!</string>
+    <string name="player_error">Error Initializing YouTube player: %s</string>
+    <string name="seek_to">Jump To</string>
+    <string name="seek_to_hint">Seconds</string>
     <string-array name="modes">
         <item>Select a mode</item>
         <item>Sober Mode</item>
