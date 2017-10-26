@@ -8,6 +8,9 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 /**
  * Created by Atharva on 9/9/2017.
  */
@@ -15,6 +18,8 @@ import android.widget.ImageView;
 public class splashActivity extends Activity {
     ImageView rotateK;
     boolean clicked = false;
+
+    private FirebaseUser firebaseUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,11 +31,22 @@ public class splashActivity extends Activity {
         Animation startRotateAnimation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.k_rotate_animation);
         rotateK.startAnimation(startRotateAnimation);
 
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+
         View.OnClickListener skip = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 clicked = true;
-                startActivity(new Intent(splashActivity.this, phoneVerificationActivity.class));
+                if (firebaseUser != null) {
+                    Intent userProfileIntent = new Intent(splashActivity.this, userProfileActivity.class);
+                    startActivity(userProfileIntent);
+                    finish();
+                }
+                else {
+                    Intent splash = new Intent(splashActivity.this, phoneVerificationActivity.class);
+                    startActivity(splash);
+                    finish();
+                }
             }
         };
         rotateK.setOnClickListener(skip);
@@ -45,8 +61,16 @@ public class splashActivity extends Activity {
 
                 } finally {
                     if (!clicked) {
-                        Intent splash = new Intent(splashActivity.this, phoneVerificationActivity.class);
-                        startActivity(splash);
+                        if (firebaseUser != null) {
+                            Intent userProfileIntent = new Intent(splashActivity.this, userProfileActivity.class);
+                            startActivity(userProfileIntent);
+                            finish();
+                        }
+                        else {
+                            Intent splash = new Intent(splashActivity.this, phoneVerificationActivity.class);
+                            startActivity(splash);
+                            finish();
+                        }
                     }
                 }
             }

@@ -11,6 +11,8 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.ViewSwitcher;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class userProfileActivity extends AppCompatActivity {
 
     private ImageButton editProfile;
@@ -37,10 +39,20 @@ public class userProfileActivity extends AppCompatActivity {
         View.OnClickListener logoutListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(userProfileActivity.this, splashActivity.class));
+                FirebaseAuth.getInstance().signOut();
+                Intent phoneVerificationActivityIntent = new Intent(userProfileActivity.this, phoneVerificationActivity.class);
+                startActivity(phoneVerificationActivityIntent);
+                finish();
             }
         };
         logout.setOnClickListener(logoutListener);
 
+        View.OnClickListener fabListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(userProfileActivity.this, createSessionActivity.class));
+            }
+        };
+        newSession.setOnClickListener(fabListener);
     }
 }

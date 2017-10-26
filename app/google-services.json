@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "519511712172-b64l9ielulm4e1ibkm451hnm14egghu3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pranav.karaoke",
+            "certificate_hash": "06677a97b78d03f3d3011ec293b4d783d5f17e1c"
+          }
+        },
+        {
           "client_id": "519511712172-u0ued5aqgeifgo6h8ttsja13pudbm2ld.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
