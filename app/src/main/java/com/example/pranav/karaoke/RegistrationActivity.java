@@ -61,11 +61,11 @@ public class RegistrationActivity extends AppCompatActivity {
                     Toast.makeText(RegistrationActivity.this, "Username too short. Please create a username with at least 4 characters.", Toast.LENGTH_LONG).show();
                    username.getEditText().setText("");
                 }
-                else if((Pattern.matches("[a-zA-Z]+", user) == false) ){
+                else if((Pattern.matches("[0-9]+", user) == true) ){
                     Toast.makeText(RegistrationActivity.this, "Username must contain at least 1 letter.", Toast.LENGTH_LONG).show();
                     username.getEditText().setText("");
                 }
-                else if(name.length() < 2 || (Pattern.matches("[a-zA-Z]+", name) == false)){
+                else if(name.length() < 2 || (Pattern.matches("([a-zA-Z]+.)+", name) == false)){
                     Toast.makeText(RegistrationActivity.this, "Please enter your full name.", Toast.LENGTH_LONG).show();
                 }
                 else {
