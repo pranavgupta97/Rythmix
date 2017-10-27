@@ -30,8 +30,9 @@ public class RegistrationActivity extends AppCompatActivity {
     private TextInputLayout fullName;
     private TextInputLayout username;
     private Button saveButton;
-
+    public String phoneNumber;
     private DatabaseReference mDatabase;
+    //private FirebaseAuth mAuth;
 
 
     @Override
@@ -42,6 +43,8 @@ public class RegistrationActivity extends AppCompatActivity {
         fullName = (TextInputLayout) findViewById(R.id.fullNameEditText);
         username = (TextInputLayout) findViewById(R.id.userNameEditText);
         saveButton = (Button) findViewById(R.id.saveButton);
+        Bundle extras = getIntent().getExtras();
+        phoneNumber = extras.getString("Phone Number");
 
 
 
@@ -82,6 +85,7 @@ public class RegistrationActivity extends AppCompatActivity {
                                 HashMap<String, String> userMap = new HashMap<>();
                                 userMap.put("fullName", name);
                                 userMap.put("username", user);
+                                userMap.put("phoneNumber", phoneNumber);
                                 mDatabase.setValue(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {
