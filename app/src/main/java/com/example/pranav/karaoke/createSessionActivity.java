@@ -182,9 +182,13 @@ public class createSessionActivity extends AppCompatActivity {
         modeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                selectedMode = (String) parent.getItemAtPosition(position);
-
+                if(position > 0) {
+                    selectedMode = (String) parent.getItemAtPosition(position);
+                }else{
+                    selectedMode = "Select Mode Here";
+                }
             }
+
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {

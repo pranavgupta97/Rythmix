@@ -25,7 +25,7 @@ public class userProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_user_profile);
 
         editProfile = (ImageButton) findViewById(R.id.imageButton);
-        logout = (Button) findViewById(R.id.button3);
+        logout = (Button) findViewById(R.id.button4);
         newSession = (FloatingActionButton) findViewById(R.id.fabNewSession);
 
         View.OnClickListener editProfileListener = new View.OnClickListener() {
