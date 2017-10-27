@@ -109,25 +109,28 @@ public class phoneVerificationActivity extends AppCompatActivity {
                                         if(user != null) {
                                             if(phoneNumber.equals(user.phoneNumber)){
                                                 count++;
-                                                Intent registrationActivityIntent  = new Intent(phoneVerificationActivity.this, userProfileActivity.class);
-                                                startActivity(registrationActivityIntent);
-                                                finish();
-                                                Toast.makeText(phoneVerificationActivity.this, "SignIn Successful", Toast.LENGTH_SHORT).show();
+
                                             }
                                         }
+                                    }
+                                    if(count == 0) {
+                                        Intent registrationActivityIntent = new Intent(phoneVerificationActivity.this, RegistrationActivity.class);
+                                        registrationActivityIntent.putExtra("Phone Number", phoneNumber);
+                                        startActivity(registrationActivityIntent);
+                                        finish();
+                                        Toast.makeText(phoneVerificationActivity.this, "SignIn Successful", Toast.LENGTH_SHORT).show();
+                                    }else{
+                                        Intent registrationActivityIntent  = new Intent(phoneVerificationActivity.this, userProfileActivity.class);
+                                        startActivity(registrationActivityIntent);
+                                        finish();
+                                        Toast.makeText(phoneVerificationActivity.this, "SignIn Successful", Toast.LENGTH_SHORT).show();
                                     }
                                 }
                                 @Override
                                 public void onCancelled(DatabaseError databaseError) {
                                 }
                             });
-                    if(count == 0) {
-                        Intent registrationActivityIntent = new Intent(phoneVerificationActivity.this, RegistrationActivity.class);
-                        registrationActivityIntent.putExtra("Phone Number", phoneNumber);
-                        startActivity(registrationActivityIntent);
-                        finish();
-                        Toast.makeText(phoneVerificationActivity.this, "SignIn Successful", Toast.LENGTH_SHORT).show();
-                    }
+
                 }
             }
         });

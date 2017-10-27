@@ -49,7 +49,7 @@ public class userProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_user_profile);
 
         editProfile = (ImageButton) findViewById(R.id.imageButton);
-        logout = (Button) findViewById(R.id.button3);
+        logout = (Button) findViewById(R.id.button4);
         newSession = (FloatingActionButton) findViewById(R.id.fabNewSession);
 
         View.OnClickListener editProfileListener = new View.OnClickListener() {
@@ -83,7 +83,7 @@ public class userProfileActivity extends AppCompatActivity {
         textName2 = (TextView) findViewById(R.id.signUpFullNameEditText);
         textUsername2 = (TextView) findViewById(R.id.signUpUserNameEditText);
         textPhoneNr = (TextView) findViewById(R.id.signUpEmailEditText);
-        logout = (Button) findViewById(R.id.button3);
+        logout = (Button) findViewById(R.id.button4);
         currentUser = FirebaseAuth.getInstance().getCurrentUser();
 
         String current_uid = currentUser.getUid();
