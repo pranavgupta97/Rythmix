@@ -98,6 +98,13 @@ public class  editProfileActivity extends AppCompatActivity {
                                 HashMap<String, String> userMap = new HashMap<>();
                                 userMap.put("fullName", name);
                                 userMap.put("username", user);
+
+                                /*Added this because it was creating a null pointer when you save from edit profile
+                                 *Once you hit save in edit profile
+                                 *It updates the user data and deletes the phone number
+                                 *So this change is valid fix for now
+                                 */
+                                userMap.put("phoneNumber", currentUser.getPhoneNumber());
                                 userDatabase.setValue(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {

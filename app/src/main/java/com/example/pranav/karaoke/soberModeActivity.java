@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
+
 import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
@@ -14,6 +15,7 @@ public class soberModeActivity extends YouTubeBaseActivity implements YouTubePla
 
     private static final int recoveryRequest = 1;
     private YouTubePlayerView youTubePlayerView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +31,7 @@ public class soberModeActivity extends YouTubeBaseActivity implements YouTubePla
         if (!b) {
             youTubePlayer.cueVideo("jRpDuEgqQQQ");
         }
+
     }
 
     @Override
