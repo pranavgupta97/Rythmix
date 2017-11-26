@@ -35,6 +35,7 @@ public class phoneVerificationActivity extends AppCompatActivity {
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks callBacks;
     private DatabaseReference mDatabase;
     public String phoneNumber;
+    public int phoneLength;
     public int count = 0;
     private FirebaseAuth firebaseAuth;
 
@@ -78,7 +79,12 @@ public class phoneVerificationActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 phoneNumber = phoneNumberEntered.getText().toString();
-                PhoneAuthProvider.getInstance().verifyPhoneNumber(phoneNumber, 60, TimeUnit.SECONDS, phoneVerificationActivity.this, callBacks);
+                phoneLength = phoneNumber.length();
+                if((phoneNumber != null) && (phoneLength == 10)) {
+                    PhoneAuthProvider.getInstance().verifyPhoneNumber(phoneNumber, 60, TimeUnit.SECONDS, phoneVerificationActivity.this, callBacks);
+                }else {
+                    Toast.makeText(phoneVerificationActivity.this, "Please enter a valid phone number!", Toast.LENGTH_SHORT).show();
+                }
             }
         };
         sendCodeButton.setOnClickListener(sendCodeButtonListener);
@@ -87,8 +93,13 @@ public class phoneVerificationActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String verification = verificationCode.getText().toString();
-                PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationId, verification);
-                signIn(credential);
+
+                if(verification.equals(verificationId)) {
+                    PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationId, verification);
+                    signIn(credential);
+                }else{
+                    Toast.makeText(phoneVerificationActivity.this, "Please enter a valid code!", Toast.LENGTH_SHORT).show();
+                }
             }
         };
         verifyButton.setOnClickListener(verifyButtonListener);
@@ -120,8 +131,8 @@ public class phoneVerificationActivity extends AppCompatActivity {
                                         finish();
                                         Toast.makeText(phoneVerificationActivity.this, "SignIn Successful", Toast.LENGTH_SHORT).show();
                                     }else{
-                                        Intent registrationActivityIntent  = new Intent(phoneVerificationActivity.this, userProfileActivity.class);
-                                        startActivity(registrationActivityIntent);
+                                        Intent userProfileActivityIntent  = new Intent(phoneVerificationActivity.this, userProfileActivity.class);
+                                        startActivity(userProfileActivityIntent);
                                         finish();
                                         Toast.makeText(phoneVerificationActivity.this, "SignIn Successful", Toast.LENGTH_SHORT).show();
                                     }
