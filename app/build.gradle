@@ -35,6 +35,8 @@ dependencies {
     compile 'com.firebaseui:firebase-ui-database:2.0.1'
     testCompile 'junit:junit:4.12'
     implementation files('libs/google-api-client-1.23.0.jar')
+    compile 'com.github.sujithkanna:smileyrating:1.4'
+
 }
 
 apply plugin: 'com.google.gms.google-services'
