@@ -91,7 +91,7 @@ public class createSessionActivity extends AppCompatActivity {
                                             if (task.isSuccessful()) {
                                                 //loop through users
 
-                                                Intent createSessIntent = new Intent(createSessionActivity.this, soberModeActivity.class);
+                                                Intent createSessIntent = new Intent(createSessionActivity.this, youtubeSearchActivity.class);
                                                 createSessIntent.putStringArrayListExtra("This a list of usernames", usernames);
                                                 startActivity(createSessIntent);
                                                 finish();
@@ -146,7 +146,7 @@ public class createSessionActivity extends AppCompatActivity {
                                                         if (task.isSuccessful()) {
 
 
-                                                            Intent createDSessIntent = new Intent(createSessionActivity.this, drunkModeActivity.class);
+                                                            Intent createDSessIntent = new Intent(createSessionActivity.this, youtubeSearchActivity.class);
                                                             createDSessIntent.putStringArrayListExtra("This a list of usernames", usernames);
                                                             startActivity(createDSessIntent);
                                                             finish();
