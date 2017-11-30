@@ -94,12 +94,12 @@ public class phoneVerificationActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String verification = verificationCode.getText().toString();
 
-                if(verification.equals(verificationId)) {
+                //if(verification.equals(verificationId.toString())) {
                     PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationId, verification);
                     signIn(credential);
-                }else{
-                    Toast.makeText(phoneVerificationActivity.this, "Please enter a valid code!", Toast.LENGTH_SHORT).show();
-                }
+                //}else{
+                  //  Toast.makeText(phoneVerificationActivity.this, "Please enter a valid code!", Toast.LENGTH_SHORT).show();
+                //}
             }
         };
         verifyButton.setOnClickListener(verifyButtonListener);

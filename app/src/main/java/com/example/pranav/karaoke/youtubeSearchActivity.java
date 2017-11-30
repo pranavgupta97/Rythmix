@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,15 +15,19 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class youtubeSearchActivity extends AppCompatActivity {
 
     private EditText searchInput;
     private ListView listOfVideos;
+    private ArrayList<String> videoIds;
+    private ArrayList<String> users;
 
 
     private Handler handler;
@@ -34,6 +39,8 @@ public class youtubeSearchActivity extends AppCompatActivity {
 
         searchInput = (EditText) findViewById(R.id.search_input);
         listOfVideos = (ListView) findViewById(R.id.videos_found);
+        videoIds = new ArrayList<String>();
+        users = new ArrayList<String>();
 
         handler = new Handler();
 
@@ -47,7 +54,10 @@ public class youtubeSearchActivity extends AppCompatActivity {
                 return true;
             }
         });
-        addClickListener();
+
+        //for (int i = 0; i < 4; i++) {
+            addClickListener();
+        //}
     }
 
     private List<video> searchResults;
@@ -91,9 +101,14 @@ public class youtubeSearchActivity extends AppCompatActivity {
         listOfVideos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(getApplicationContext(), youtubePlayerActivity.class);
-                intent.putExtra("VIDEO_ID", searchResults.get(position).getId());
-                startActivity(intent);
+                users = getIntent().getStringArrayListExtra("USERS");
+                videoIds.add(searchResults.get(position).getId());
+                Toast.makeText(youtubeSearchActivity.this, "Song queued. Please select next song.", Toast.LENGTH_LONG).show();
+                if (videoIds.size() == users.size()) {
+                    Intent intent = new Intent(getApplicationContext(), youtubePlayerActivity.class);
+                    intent.putStringArrayListExtra("VIDEO_ID", videoIds);
+                    startActivity(intent);
+                }
             }
         });
     }
