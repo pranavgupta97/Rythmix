@@ -30,7 +30,8 @@
         <activity android:name=".themeActivity" />
         <activity android:name=".youtubeSearchActivity" />
         <activity android:name=".youtubePlayerActivity" />
-        <activity android:name=".ratingsActivity"></activity>
+        <activity android:name=".ratingsActivity" />
+        <activity android:name=".groupSelectionActivity"></activity>
     </application>
 
 </manifest>
