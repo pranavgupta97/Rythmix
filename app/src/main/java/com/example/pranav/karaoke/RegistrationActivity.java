@@ -46,10 +46,7 @@ public class RegistrationActivity extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         phoneNumber = extras.getString("Phone Number");
 
-
-
     }
-
 
     public void onStart() {
         super.onStart();
@@ -73,7 +70,6 @@ public class RegistrationActivity extends AppCompatActivity {
                 }
                 else {
                     Query usernameQuery = FirebaseDatabase.getInstance().getReference().child("Users").orderByChild("username").equalTo(user);
-
                     usernameQuery.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
