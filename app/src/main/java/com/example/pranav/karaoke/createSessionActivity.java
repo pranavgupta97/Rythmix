@@ -100,7 +100,7 @@ public class createSessionActivity extends AppCompatActivity {
                                                 //loop through users
 
                                                 Intent createSessIntent = new Intent(createSessionActivity.this, youtubeSearchActivity.class);
-                                                createSessIntent.putStringArrayListExtra("This a list of usernames", usernames);
+                                                createSessIntent.putStringArrayListExtra("USERS", usernames);
                                                 startActivity(createSessIntent);
                                                 finish();
 
@@ -167,7 +167,7 @@ public class createSessionActivity extends AppCompatActivity {
 
 
                                                             Intent createDSessIntent = new Intent(createSessionActivity.this, youtubeSearchActivity.class);
-                                                            createDSessIntent.putStringArrayListExtra("This a list of usernames", usernames);
+                                                            createDSessIntent.putStringArrayListExtra("USERS", usernames);
                                                             startActivity(createDSessIntent);
                                                             finish();
 
