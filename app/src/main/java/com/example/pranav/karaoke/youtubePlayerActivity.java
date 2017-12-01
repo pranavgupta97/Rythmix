@@ -36,6 +36,13 @@ public class youtubePlayerActivity extends YouTubeBaseActivity implements YouTub
         queuedVideos = (ListView) findViewById(R.id.queued_songs);
         videoTitles = getIntent().getStringArrayListExtra("VIDEO_TITLE");
 
+        if (videoTitles.isEmpty()) {
+            playerButton.setVisibility(View.INVISIBLE);
+        }
+        else if (videoTitles.get(0) != null) {
+            videoTitles.remove(0);
+        }
+
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, videoTitles);
         queuedVideos.setAdapter(arrayAdapter);
     }
