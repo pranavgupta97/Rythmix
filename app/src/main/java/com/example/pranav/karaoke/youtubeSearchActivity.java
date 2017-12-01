@@ -28,6 +28,7 @@ public class youtubeSearchActivity extends AppCompatActivity {
     private ListView listOfVideos;
     private ArrayList<String> videoIds;
     private ArrayList<String> users;
+    private ArrayList<String> videoTitles;
 
 
     private Handler handler;
@@ -41,6 +42,7 @@ public class youtubeSearchActivity extends AppCompatActivity {
         listOfVideos = (ListView) findViewById(R.id.videos_found);
         videoIds = new ArrayList<String>();
         users = new ArrayList<String>();
+        videoTitles = new ArrayList<String>();
 
         handler = new Handler();
 
@@ -103,10 +105,12 @@ public class youtubeSearchActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 users = getIntent().getStringArrayListExtra("USERS");
                 videoIds.add(searchResults.get(position).getId());
+                videoTitles.add(searchResults.get(position).getTitle());
                 Toast.makeText(youtubeSearchActivity.this, "Song queued. Please select next song.", Toast.LENGTH_LONG).show();
                 if (videoIds.size() == users.size()) {
                     Intent intent = new Intent(youtubeSearchActivity.this, youtubePlayerActivity.class);
                     intent.putStringArrayListExtra("VIDEO_ID", videoIds);
+                    intent.putStringArrayListExtra("VIDEO_TITLE", videoTitles);
                     startActivity(intent);
                 }
             }
