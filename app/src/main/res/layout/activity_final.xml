@@ -7,60 +7,92 @@
     android:background="@drawable/gradient_background"
     tools:context="com.example.pranav.karaoke.finalActivity">
 
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:alpha="0.4"
+        android:fadingEdge="none"
+        android:scaleType="centerCrop"
+        app:srcCompat="@mipmap/disco" />
+
     <TextView
         android:id="@+id/drunkModeText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Session OVER!"
-        android:textColor="@color/white"
-        android:gravity="center"
-        android:textSize="40sp"
-        android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="113dp" />
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="76dp"
+        android:fontFamily="@font/quicksand_light"
+        android:gravity="center"
+        android:text="Session Over!"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        android:textStyle="bold" />
+
     <TextView
         android:id="@+id/callNight"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Call it a Night"
-        android:textColor="@color/white"
-        android:gravity="center"
-        android:textSize="20sp"
+        android:layout_alignBottom="@+id/callNightFab"
+        android:layout_alignParentBottom="false"
         android:layout_alignTop="@+id/callNightFab"
         android:layout_centerHorizontal="true"
-        android:layout_alignBottom="@+id/callNightFab" />
+        android:fadingEdge="horizontal|vertical"
+        android:fontFamily="@font/quicksand_light"
+        android:gravity="center"
+        android:text="Call it a Night"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/createNew"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="     Create a new Session"
-        android:textColor="@color/white"
-        android:gravity="center"
-        android:textSize="20sp"
+        android:layout_alignBottom="@+id/createNewFab"
         android:layout_alignTop="@+id/createNewFab"
         android:layout_centerHorizontal="true"
-        android:layout_alignBottom="@+id/createNewFab" />
+        android:fontFamily="@font/quicksand_light"
+        android:gravity="center"
+        android:text="     Create a new Session"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/callNightFab"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:backgroundTint="@color/colorPrimary"
-        app:rippleColor="@color/white"
-        android:src="@drawable/ic_brightness_3_white_24dp"
-        android:layout_below="@+id/createNewFab"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:layout_alignStart="@+id/createNewFab"
-        android:layout_marginTop="51dp" />
+        android:layout_below="@+id/createNewFab"
+        android:layout_marginTop="51dp"
+        android:src="@drawable/ic_brightness_3_white_24dp"
+        app:backgroundTint="@color/scrollbar"
+        app:rippleColor="@color/white"
+        app:borderWidth="2dp"
+        app:elevation="@dimen/fab_margin"
+        android:tint="@color/white"
+        android:backgroundTint="#4F717D" />
+
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/createNewFab"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:backgroundTint="@color/colorPrimary"
-        app:rippleColor="@color/white"
-        android:src="@mipmap/mic_logo"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/drunkModeText"
         android:layout_marginStart="36dp"
         android:layout_marginTop="70dp"
-        android:layout_below="@+id/drunkModeText"
-        android:layout_alignParentStart="true" />
+        app:backgroundTint="@color/scrollbar"
+        android:src="@mipmap/mic_logo"
+        app:rippleColor="@color/white"
+        app:borderWidth="2dp"
+        app:elevation="@dimen/fab_margin"
+        android:tint="@color/white"
+        android:backgroundTint="#4F717D"/>
 
 </RelativeLayout>

@@ -105,7 +105,7 @@ public class youtubeSearchActivity extends AppCompatActivity {
                 videoIds.add(searchResults.get(position).getId());
                 Toast.makeText(youtubeSearchActivity.this, "Song queued. Please select next song.", Toast.LENGTH_LONG).show();
                 if (videoIds.size() == users.size()) {
-                    Intent intent = new Intent(getApplicationContext(), youtubePlayerActivity.class);
+                    Intent intent = new Intent(youtubeSearchActivity.this, youtubePlayerActivity.class);
                     intent.putStringArrayListExtra("VIDEO_ID", videoIds);
                     startActivity(intent);
                 }
