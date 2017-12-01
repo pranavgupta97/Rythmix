@@ -18,7 +18,8 @@
         android:alpha="0.4"
         android:scaleType="centerCrop"
         android:textAlignment="center"
-        app:srcCompat="@mipmap/disco" />
+        app:srcCompat="@mipmap/disco"
+        android:theme="@android:style/Theme.Holo.Dialog"/>
 
     <com.google.android.youtube.player.YouTubePlayerView
         android:id="@+id/player_view"
@@ -38,8 +39,7 @@
         android:background="@mipmap/disco"
         android:backgroundTint="#0A2543"
         android:dividerHeight="5dp"
-        android:textColor="#fff"
-        android:theme="@android:style/Theme.Holo.Dialog"
+        android:cacheColorHint="@color/white"
         android:layout_centerHorizontal="true"
         />
 
@@ -56,7 +56,7 @@
         android:theme="@android:style/Theme.Holo.Dialog" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/upNext"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_alignParentStart="true"
