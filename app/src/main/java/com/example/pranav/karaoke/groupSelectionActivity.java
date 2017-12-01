@@ -95,8 +95,6 @@ public class groupSelectionActivity extends AppCompatActivity {
                         HashMap<String, String> userMap = new HashMap<>();
                         for(int i = 0; i<usersList.size(); i++){
                             userMap.put("user" + i, usersList.get(i));
-
-
                         }
 
                         databaseRef.setValue(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -105,6 +103,7 @@ public class groupSelectionActivity extends AppCompatActivity {
                                 if(task.isSuccessful()){
                                     Toast.makeText(groupSelectionActivity.this, "Users added to session", Toast.LENGTH_LONG).show();
                                     Intent youtubeIntent = new Intent(groupSelectionActivity.this, youtubeSearchActivity.class);
+                                    youtubeIntent.putStringArrayListExtra("USERS", usersList);
                                     startActivity(youtubeIntent);
                                     finish();
                                 }
