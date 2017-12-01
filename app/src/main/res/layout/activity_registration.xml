@@ -14,7 +14,7 @@
         android:id="@+id/imageView12"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:srcCompat="@mipmap/mics"
+        app:srcCompat="@mipmap/disco"
         android:alpha="0.4"
         android:scaleType="centerCrop"
         android:layout_alignParentTop="true"

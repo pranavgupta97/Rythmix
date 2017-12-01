@@ -66,12 +66,20 @@ public class createSessionActivity extends AppCompatActivity {
                     final FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
                     mDatabase = FirebaseDatabase.getInstance().getReference().child("Karaoke_Session").child(currentUser.getUid());
 
-
                     HashMap<String, String> sessionMap = new HashMap<>();
                     sessionMap.put("session Name", sessName);
                     sessionMap.put("session Mode", sessMode);
-                    mDatabase.setValue(sessionMap);
-                    mDatabase = FirebaseDatabase.getInstance().getReference().child("Karaoke_Session").child(currentUser.getUid()).child("SessionUsers");
+                    mDatabase.setValue(sessionMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if(task.isSuccessful()){
+                                Intent makeGroupIntent = new Intent(createSessionActivity.this, groupSelectionActivity.class);
+                                startActivity(makeGroupIntent);
+
+                            }
+                        }
+                    });
+                   /* mDatabase = FirebaseDatabase.getInstance().getReference().child("Karaoke_Session").child(currentUser.getUid()).child("SessionUsers");
                     final HashMap<String, String> sessionUsersMap = new HashMap<>();
 
                     FirebaseDatabase.getInstance().getReference().child("Users")
@@ -89,7 +97,7 @@ public class createSessionActivity extends AppCompatActivity {
                                     mDatabase.setValue(sessionUsersMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
-                                            if (task.isSuccessful()) {
+                                             if (task.isSuccessful()) {
                                                 //loop through users
 
                                                 Intent createSessIntent = new Intent(createSessionActivity.this, youtubeSearchActivity.class);
@@ -107,22 +115,34 @@ public class createSessionActivity extends AppCompatActivity {
                                 @Override
                                 public void onCancelled(DatabaseError databaseError) {
                                 }
-                            });
+                            });*/
 
 
                 } else if (selectedMode.equals("Drunk Mode")) {
                     String sessName = sessionName.getText().toString();
                     String sessMode = selectedMode;
                     final FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
-                    mDatabase = FirebaseDatabase.getInstance().getReference().child("Karaoke_Session").child(currentUser.getUid());
+                    //mDatabase = FirebaseDatabase.getInstance().getReference().child("Karaoke_Session").child(currentUser.getUid());
                     HashMap<String, String> sessionMap = new HashMap<>();
                     sessionMap.put("session Name", sessName);
                     sessionMap.put("session Mode", sessMode);
-                    mDatabase.setValue(sessionMap);
-                    mDatabase = FirebaseDatabase.getInstance().getReference().child("Karaoke_Session").child(currentUser.getUid()).child("SessionUsers");
-                    final HashMap<String, String> sessionUsersMap = new HashMap<>();
+                    //mDatabase.setValue(sessionMap);
+                    mDatabase = FirebaseDatabase.getInstance().getReference().child("Karaoke_Session").child(currentUser.getUid());
+
+
 
                     mDatabase.setValue(sessionMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if(task.isSuccessful()){
+                                Intent makeGroupIntent = new Intent(createSessionActivity.this, groupSelectionActivity.class);
+                                startActivity(makeGroupIntent);
+
+                            }
+                        }
+                    });
+
+                   /* mDatabase.setValue(sessionMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()) {
@@ -165,8 +185,8 @@ public class createSessionActivity extends AppCompatActivity {
                                         });
 
                             }
-                        }
-                    });
+                        }*/
+                   // });
                 } else {
                     Toast.makeText(createSessionActivity.this, "Please Select a Mode for your Session!", Toast.LENGTH_SHORT).show();
                 }
