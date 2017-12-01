@@ -64,11 +64,11 @@ public class groupSelectionActivity extends AppCompatActivity {
                             result.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
-                                    if (usersList.contains(query)) {
+                                    if (usersList.contains(query + " ")) {
                                         Toast.makeText(groupSelectionActivity.this, "This user is already in the session!", Toast.LENGTH_SHORT).show();
                                     }
                                     else {
-                                        usersList.add(query + "  ");
+                                        usersList.add(query + " ");
                                         String[] array = new String[usersList.size()];
                                         usersList.toArray(array);
                                         recyclerView.setAdapter(new VerticalAdapter(array));
