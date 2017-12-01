@@ -27,16 +27,19 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true" />
 
+
     <ListView
         android:id="@+id/videos_found"
         android:layout_width="match_parent"
-        android:layout_height="360dp"
+        android:layout_height="321dp"
         android:layout_above="@+id/player_button"
         android:layout_alignParentStart="true"
         android:background="@mipmap/disco"
         android:backgroundTint="#0A2543"
         android:dividerHeight="5dp"
+        android:textColor="#fff"
         android:theme="@android:style/Theme.Holo.Dialog"
+        android:layout_centerHorizontal="true"
         />
 
     <Button
@@ -50,5 +53,18 @@
         android:text="Play Next Song"
         android:textColor="#fff"
         android:theme="@android:style/Theme.Holo.Dialog" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/player_view"
+        android:text="Up Next......"
+        android:textColor="#fff"
+        android:fontFamily="@font/quicksand_light"
+        android:background="#0A2543"
+        android:textSize="25sp"
+        android:textStyle="bold"/>
 
 </RelativeLayout>

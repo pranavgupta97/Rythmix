@@ -10,20 +10,20 @@ import android.widget.TextView;
  * Created by Ibra on 11/28/2017.
  */
 
-public class HorizontalAdapter extends RecyclerView.Adapter<HorizontalAdapter.HorizontalViewHolder> {
+public class VerticalAdapter extends RecyclerView.Adapter<VerticalAdapter.VerticalViewHolder> {
     private String[] item;
-    public  HorizontalAdapter(String[] item){
+    public  VerticalAdapter(String[] item){
         this.item = item;
     }
     @Override
-    public HorizontalAdapter.HorizontalViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public VerticalAdapter.VerticalViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View view = inflater.inflate(R.layout.item_layout, parent, false);
-        return new HorizontalViewHolder(view);
+        return new VerticalViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(HorizontalAdapter.HorizontalViewHolder holder, int position) {
+    public void onBindViewHolder(VerticalAdapter.VerticalViewHolder holder, int position) {
         holder.text.setText(item[position]);
 
     }
@@ -33,9 +33,9 @@ public class HorizontalAdapter extends RecyclerView.Adapter<HorizontalAdapter.Ho
         return item.length;
     }
 
-    public class HorizontalViewHolder extends RecyclerView.ViewHolder {
+    public class VerticalViewHolder extends RecyclerView.ViewHolder {
         TextView text;
-        public HorizontalViewHolder(View itemView) {
+        public VerticalViewHolder(View itemView) {
             super(itemView);
             text = (TextView) itemView.findViewById(R.id.usernameItem);
 

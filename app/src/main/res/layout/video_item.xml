@@ -11,7 +11,8 @@
         android:layout_height="128dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginRight="20dp"/>
+        android:layout_marginRight="20dp"
+        android:textColor="#fff"/>
 
     <TextView
         android:id="@+id/video_title"
