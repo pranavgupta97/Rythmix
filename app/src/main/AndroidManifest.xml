@@ -30,6 +30,11 @@
         <activity android:name=".themeActivity" />
         <activity android:name=".youtubeSearchActivity" />
         <activity android:name=".youtubePlayerActivity" />
+        <activity android:name=".ratingsActivity"></activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
         <activity android:name=".ratingsActivity" />
         <activity android:name=".groupSelectionActivity"></activity>
     </application>

@@ -13,19 +13,21 @@
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="28dp"
+        android:layout_alignBottom="@+id/imageView15"
+        android:layout_centerHorizontal="true"
         android:layout_x="151dp"
         android:layout_y="122dp"
         android:background="@color/transparent"
+        android:fontFamily="@font/quicksand_light"
         android:text="(logout)"
         android:textColor="#fff"
-        android:layout_alignBottom="@+id/imageView15"
-        android:layout_centerHorizontal="true" />
+        android:textStyle="bold|italic" />
 
     <ImageView
         android:id="@+id/imageView12"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:srcCompat="@mipmap/mics"
+        app:srcCompat="@mipmap/disco"
         android:alpha="0.4"
         android:scaleType="centerCrop"
         android:layout_alignParentTop="true"
@@ -36,6 +38,8 @@
         android:id="@+id/signUpUserNameEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/signUpFullNameEditText"
         android:layout_weight="0.02"
         android:layout_x="0dp"
         android:layout_y="248dp"
@@ -43,6 +47,7 @@
         android:drawablePadding="12dp"
         android:drawableStart="@drawable/ic_mic_none_white_24dp"
         android:ems="10"
+        android:fontFamily="@font/quicksand_light"
         android:hint="  User Name"
         android:inputType="textPersonName"
         android:paddingBottom="15dp"
@@ -51,9 +56,7 @@
         android:paddingTop="17dp"
         android:textColor="#fff"
         android:textColorHint="#fff"
-        android:textSize="18sp"
-        android:layout_below="@+id/signUpFullNameEditText"
-        android:layout_alignParentStart="true" />
+        android:textSize="20sp" />
 
     <ImageButton
         android:id="@+id/imageButton"
@@ -71,6 +74,8 @@
         android:id="@+id/signUpEmailEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/signUpUserNameEditText"
         android:layout_weight="0.02"
         android:layout_x="0dp"
         android:layout_y="305dp"
@@ -78,7 +83,8 @@
         android:drawablePadding="12dp"
         android:drawableStart="@drawable/ic_phone_white_24dp"
         android:ems="10"
-        android:hint="Phone Number"
+        android:fontFamily="@font/quicksand_light"
+        android:hint="  Phone Number"
         android:inputType="textPhonetic"
         android:paddingBottom="15dp"
         android:paddingEnd="12dp"
@@ -86,15 +92,16 @@
         android:paddingTop="17dp"
         android:textColor="#fff"
         android:textColorHint="#fff"
-        android:textSize="18sp"
-        android:layout_below="@+id/signUpUserNameEditText"
-        android:layout_alignParentStart="true" />
+        android:textSize="20sp" />
 
     <TextView
 
         android:id="@+id/signUpFullNameEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/imageButton"
+        android:layout_marginTop="191dp"
         android:layout_weight="0.03"
         android:layout_x="0dp"
         android:layout_y="191dp"
@@ -102,36 +109,38 @@
         android:drawablePadding="12dp"
         android:drawableStart="@drawable/ic_person_outline_white_24dp"
         android:ems="10"
+        android:fontFamily="@font/quicksand_light"
         android:hint="  Full Name"
         android:inputType="textPersonName"
         android:paddingBottom="15dp"
         android:paddingEnd="12dp"
         android:paddingStart="12dp"
         android:paddingTop="17dp"
-        android:textColor="#9effffff"
+        android:textColor="#ffffff"
         android:textColorHint="#fff"
-        android:textSize="18sp"
-        android:layout_marginTop="191dp"
-        android:layout_below="@+id/imageButton"
-        android:layout_alignParentStart="true" />
-
-
+        android:textSize="20sp" />
 
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fabNewSession"
-        android:layout_width="52dp"
-        android:layout_height="51dp"
-        android:layout_gravity="bottom|end"
-        android:layout_marginLeft="@dimen/fab_margin"
-        android:layout_marginRight="@dimen/fab_margin"
-        android:layout_x="326dp"
-        android:layout_y="507dp"
-        app:srcCompat="@mipmap/mic_logo"
-        android:layout_marginEnd="26dp"
-        android:layout_marginBottom="27dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="22dp"
+        android:layout_marginEnd="22dp"
+        android:layout_y="507dp"
+        android:background="@drawable/gradient_background"
+        android:backgroundTint="@color/transparent"
+        android:focusableInTouchMode="true"
+        android:focusedByDefault="false"
+        app:backgroundTint="@color/scrollbar"
+        app:borderWidth="2dp"
+        app:elevation="@dimen/fab_margin"
+        app:rippleColor="@color/white"
+        app:srcCompat="@mipmap/mic_logo"
+        android:tint="@color/white"/>
 
     <ImageView
         android:id="@+id/imageView15"
@@ -147,12 +156,14 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/imageButton"
+        android:layout_marginTop="15dp"
+        android:background="@color/transparent"
+        android:fontFamily="@font/quicksand_light"
         android:text="(Edit Profile)"
         android:textColor="#fff"
         android:textSize="11sp"
-        android:background="@color/transparent"
-        android:layout_marginTop="15dp"
-        android:layout_alignTop="@+id/imageButton"
-        android:layout_alignParentEnd="true" />
+        android:textStyle="italic" />
 
 </RelativeLayout>

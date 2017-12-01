@@ -5,19 +5,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:theme="@android:style/Theme.Holo.Dialog"
     tools:context="com.example.pranav.karaoke.youtubeSearchActivity">
 
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/search"
         android:id="@+id/search_input"
-        android:singleLine="true" />
-    
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:fontFamily="@font/quicksand_light"
+        android:hint="@string/search"
+        android:singleLine="true"
+        android:textColor="#0A2543"
+        android:textColorHint="#0A2543"
+        android:textSize="25dp" />
+
     <ListView
         android:id="@+id/videos_found"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="643dp"
+        android:background="@mipmap/disco"
+        android:backgroundTint="#0A2543"
         android:dividerHeight="5dp" />
 
 </LinearLayout>

@@ -53,6 +53,7 @@ public class createSessionActivity extends AppCompatActivity {
         sessionName = (EditText) findViewById(R.id.sessionName);
         //Instantiate fab button
         fabNext = (FloatingActionButton) findViewById(R.id.sessionFab);
+
         //set up fab button on click listener
         View.OnClickListener nextListener = new View.OnClickListener() {
             @Override
