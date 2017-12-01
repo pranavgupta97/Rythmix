@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Karaoke.iml" filepath="$PROJECT_DIR$/Karaoke.iml" />
-      <module fileurl="file://C:\Users\Ibra\StudioProjects\Rythmix\Karaoke.iml" filepath="C:\Users\Ibra\StudioProjects\Rythmix\Karaoke.iml" />
-      <module fileurl="file://C:\Users\Pranav\AndroidStudioProjects\Karaoke\Rythmix.iml" filepath="C:\Users\Pranav\AndroidStudioProjects\Karaoke\Rythmix.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Rythmix.iml" filepath="$PROJECT_DIR$/Rythmix.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
