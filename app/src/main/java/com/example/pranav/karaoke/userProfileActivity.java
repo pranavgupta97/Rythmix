@@ -35,6 +35,7 @@ public class userProfileActivity extends AppCompatActivity {
     private FloatingActionButton newSession;
     private DatabaseReference userDatabase;
     private FirebaseUser currentUser;
+    private Button textEditProfile;
 
 
     //make editText
@@ -49,6 +50,7 @@ public class userProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_user_profile);
 
         editProfile = (ImageButton) findViewById(R.id.imageButton);
+        textEditProfile = (Button) findViewById(R.id.textView3);
         logout = (Button) findViewById(R.id.button4);
         newSession = (FloatingActionButton) findViewById(R.id.fabNewSession);
 
@@ -59,6 +61,7 @@ public class userProfileActivity extends AppCompatActivity {
             }
         };
         editProfile.setOnClickListener(editProfileListener);
+        textEditProfile.setOnClickListener(editProfileListener);
 
         View.OnClickListener logoutListener = new View.OnClickListener() {
             @Override
