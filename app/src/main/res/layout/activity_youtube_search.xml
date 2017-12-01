@@ -22,7 +22,7 @@
     <ListView
         android:id="@+id/videos_found"
         android:layout_width="match_parent"
-        android:layout_height="643dp"
+        android:layout_height="match_parent"
         android:background="@mipmap/disco"
         android:backgroundTint="#0A2543"
         android:dividerHeight="5dp" />

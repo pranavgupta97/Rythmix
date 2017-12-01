@@ -68,10 +68,10 @@ public class groupSelectionActivity extends AppCompatActivity {
                                         Toast.makeText(groupSelectionActivity.this, "This user is already in the session!", Toast.LENGTH_SHORT).show();
                                     }
                                     else {
-                                        usersList.add(query);
+                                        usersList.add(query + "  ");
                                         String[] array = new String[usersList.size()];
                                         usersList.toArray(array);
-                                        recyclerView.setAdapter(new HorizontalAdapter(array));
+                                        recyclerView.setAdapter(new VerticalAdapter(array));
                                     }
                                 }
                             });

@@ -1,19 +1,24 @@
 package com.example.pranav.karaoke;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -24,6 +29,7 @@ public class youtubePlayerActivity extends YouTubeBaseActivity implements YouTub
     private Button playerButton;
     private ListView queuedVideos;
     private ArrayList<String> videoTitles;
+    private TextView upNext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,15 +41,26 @@ public class youtubePlayerActivity extends YouTubeBaseActivity implements YouTub
         playerButton = (Button) findViewById(R.id.player_button);
         queuedVideos = (ListView) findViewById(R.id.queued_songs);
         videoTitles = getIntent().getStringArrayListExtra("VIDEO_TITLE");
+        upNext = (TextView) findViewById(R.id.upNext);
 
-        if (videoTitles.isEmpty()) {
-            playerButton.setVisibility(View.INVISIBLE);
-        }
-        else if (videoTitles.get(0) != null) {
+        if (videoTitles.size() > 1) {
             videoTitles.remove(0);
         }
+        else if (videoTitles.size() == 1) {
+            videoTitles.remove(0);
+            upNext.setVisibility(View.INVISIBLE);
+            playerButton.setVisibility(View.INVISIBLE);
+        }
 
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, videoTitles);
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, videoTitles) {
+            @Override
+            public View getView (int position, View convertView, ViewGroup parent) {
+                View view = super.getView(position, convertView, parent);
+                TextView text = (TextView) view.findViewById(android.R.id.text1);
+                text.setTextColor(Color.WHITE);
+                return view;
+            }
+        };
         queuedVideos.setAdapter(arrayAdapter);
     }
 
@@ -95,7 +112,6 @@ public class youtubePlayerActivity extends YouTubeBaseActivity implements YouTub
                         Intent sameIntent = getIntent();
                         sameIntent.putStringArrayListExtra("VIDEO_ID", nameList);
                         sameIntent.putStringArrayListExtra("VIDEO_TITLE", videoTitles);
-                        videoTitles.remove(0);
                         finish();
                         startActivity(sameIntent);
                     }
